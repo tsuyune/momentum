@@ -1,4 +1,4 @@
-import showDate from "./date";
+import showDate from './date';
 export function showTime() {
     const time = document.querySelector('.time');
     const date = new Date();
