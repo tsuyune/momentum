@@ -1,14 +1,18 @@
-const getTimeOfDay = time => {
-    if (time >= 6 && time <= 12) return 'morning';
-    else if (time >= 13 && time <= 18) return 'afternoon';
-    else if (time >= 19 && time <= 23) return 'evening';
+export function getTimeOfDay(time) {
+    if (time >= 6 && time <= 11) return 'morning';
+    else if (time >= 12 && time <= 17) return 'afternoon';
+    else if (time >= 18 && time <= 23) return 'evening';
     else return 'night';
 }
 
-export function showGreeting() {
+export default function showTimeOfDay() {
     const greeting = document.querySelector('.greeting');
     const hours = new Date().getHours();
-    greeting.textContent = `Good ${getTimeOfDay(hours)}`;
+    const timeOfDay = getTimeOfDay(hours);
+    greeting.textContent = `Good ${timeOfDay}`;
+}
+
+const showName = () => {
     const name = document.querySelector('.name');
 
     /* save name to local storage */
@@ -26,4 +30,4 @@ export function showGreeting() {
     window.addEventListener('load', getLocalStorage);
 }
 
-showGreeting();
+showName();

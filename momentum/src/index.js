@@ -1,3 +1,3 @@
 import './scripts/time';
-import './scripts/date';
-import './scripts/greeting'
+import './scripts/greeting';
+import './scripts/background-image-slider';
