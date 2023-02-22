@@ -1,4 +1,6 @@
-import {getTimeOfDay} from './greeting';
+import {
+    getTimeOfDay
+} from './greeting';
 
 /* randomize number from 1 to 20 inclusive */
 const getRandomInt = () => {
@@ -21,7 +23,6 @@ const getSlidePrev = () => {
 }
 
 /* slider */
-
 const slideNext = document.querySelector('.slide-next');
 const slidePrev = document.querySelector('.slide-prev');
 
@@ -31,16 +32,18 @@ const bgSlider = () => {
 }
 
 /* add nulls before randomNum and use getTimeOfDay function to create image link */
-const setBg = () => {
+const setBg = async () => {
     let bgNum = String(randomNum).padStart(2, 0);
     const hours = new Date().getHours();
     const timeOfDay = getTimeOfDay(hours);
 
+    /* smooth image scrolling */
     const img = new Image();
     img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg`;
-    img.onload = () => {
-        document.body.style.backgroundImage = `url('${img.src}')`;
-    }
+
+    await img.decode();
+
+    document.body.style.backgroundImage = `url('${img.src}')`;
 }
 
 bgSlider();

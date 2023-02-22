@@ -27,7 +27,7 @@ const showName = () => {
             name.value = localStorage.getItem('name');
         }
     }
-    window.addEventListener('load', getLocalStorage);
+    getLocalStorage();
 }
 
 showName();
