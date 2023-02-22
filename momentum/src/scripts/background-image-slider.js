@@ -2,11 +2,12 @@ import {
     getTimeOfDay
 } from './greeting';
 
-/* randomize number from 1 to 20 inclusive */
-const getRandomInt = () => {
-    return Math.floor(Math.random() * 20) + 1;
+/* randomize number from 1 to num inclusive */
+export default function getRandomInt(num) {
+    return Math.floor(Math.random() * num) + 1;
 }
-let randomNum = getRandomInt();
+
+let randomNum = getRandomInt(20);
 
 /* slider - show next image by increasing randomNum and call setBg function with randomNum as an argument */
 const getSlideNext = () => {
