@@ -1,5 +1,6 @@
+const dateElement = document.querySelector('.date');
+
 export default function showDate() {
-    const dateElement = document.querySelector('.date');
     const date = new Date();
     const options = {
         weekday: 'long',

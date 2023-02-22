@@ -1,8 +1,9 @@
 import showDate from './date';
 import showTimeOfDay from './greeting';
 
+const time = document.querySelector('.time');
+
 const showTime = () => {
-    const time = document.querySelector('.time');
     const date = new Date();
     time.textContent = date.toLocaleTimeString();
     showDate();

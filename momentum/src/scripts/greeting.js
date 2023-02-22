@@ -5,16 +5,16 @@ export function getTimeOfDay(time) {
     else return 'night';
 }
 
+const greeting = document.querySelector('.greeting');
+const name = document.querySelector('.name');
+
 export default function showTimeOfDay() {
-    const greeting = document.querySelector('.greeting');
     const hours = new Date().getHours();
     const timeOfDay = getTimeOfDay(hours);
     greeting.textContent = `Good ${timeOfDay}`;
 }
 
 const showName = () => {
-    const name = document.querySelector('.name');
-
     /* save name to local storage */
     function setLocalStorage() {
         localStorage.setItem('name', name.value);

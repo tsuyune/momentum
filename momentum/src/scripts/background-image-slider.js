@@ -21,17 +21,17 @@ const getSlidePrev = () => {
 }
 
 /* slider */
+
+const slideNext = document.querySelector('.slide-next');
+const slidePrev = document.querySelector('.slide-prev');
+
 const bgSlider = () => {
-    const slideNext = document.querySelector('.slide-next');
-    const slidePrev = document.querySelector('.slide-prev');
     slideNext.addEventListener('click', getSlideNext);
     slidePrev.addEventListener('click', getSlidePrev);
 }
 
 /* add nulls before randomNum and use getTimeOfDay function to create image link */
 const setBg = () => {
-    const body = document.querySelector('body');
-
     let bgNum = String(randomNum).padStart(2, 0);
     const hours = new Date().getHours();
     const timeOfDay = getTimeOfDay(hours);
@@ -39,9 +39,8 @@ const setBg = () => {
     const img = new Image();
     img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg`;
     img.onload = () => {
-        body.style.backgroundImage = `url('${img.src}')`;
+        document.body.style.backgroundImage = `url('${img.src}')`;
     }
-    
 }
 
 bgSlider();
